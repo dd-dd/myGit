@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <link rel="stylesheet" href="/static/css/console.css">
+<link rel="stylesheet" href="/static/css/consoleformat.css"> -->
+<script src="./jquery/jquery-2.1.4.min.js"></script>
+<script src="./upload.js"></script>
+</head>
+<body>
+   man static
+   <script type="text/javascript">
+   function openPdf(){
+	   alert("pdf");
+	   var localObj = window.location;
+   var contextPath = localObj.pathname.split("/")[1];
+   var pdfurl="/"+contextPath+"/con/pdf";
+   var url="/"+contextPath+"/web/viewer.html?file="+pdfurl;
+   window.open(url);
+	   
+   }
+   
+   </script>
+    <form class="form-horizontal m-t"  action="/ddd/upFile" method="post"  enctype="multipart/form-data">
+			<label class="col-sm-2 control-label">选择文件:</label>
+			<div class="col-sm-6">
+				<input type="file" id="files"  name="fileName" multiple="multiple"/>
+			</div>
+			<div class="col-sm-2 col-sm-offset-2">
+			<!-- 上传文件按钮 -->
+				<!-- <button onclick="upTo()" type="button" class="btn btn-primary active">上传文件</button> -->
+				
+				<!--pdf预览  -->
+				<button onclick="openPdf()" type="button" class="btn btn-primary active">上传文件</button>
+			</div>
+		</form>
+</body>
+</html>
